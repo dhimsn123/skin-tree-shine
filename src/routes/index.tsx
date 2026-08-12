@@ -573,6 +573,26 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Floating action buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Chat on WhatsApp"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 transition hover:scale-110 hover:bg-[#128C7E]"
+        >
+          <WhatsAppIcon className="h-7 w-7" />
+        </a>
+        <a
+          href={phoneLink}
+          aria-label="Call now"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/30 transition hover:scale-110 hover:bg-primary-dark"
+        >
+          <CallIcon className="h-6 w-6" />
+        </a>
+      </div>
     </div>
   );
 }
