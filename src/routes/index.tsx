@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Phone,
   MapPin,
@@ -199,6 +199,10 @@ function Index() {
             <a href="#services" className="text-sm font-medium text-foreground hover:text-primary">
               Services
             </a>
+            <Link to="/treatments" className="text-sm font-medium text-foreground hover:text-primary">
+              Treatments
+            </Link>
+
             <a href="#about" className="text-sm font-medium text-foreground hover:text-primary">
               About
             </a>
@@ -234,6 +238,10 @@ function Index() {
               <a href="#services" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
                 Services
               </a>
+              <Link to="/treatments" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
+                Treatments
+              </Link>
+
               <a href="#about" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
                 About
               </a>
