@@ -501,22 +501,46 @@ function Index() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center rounded-3xl bg-gradient-to-br from-cream via-background to-cream-dark p-8 shadow-soft sm:p-12">
-              <img
-                src={logoAsset.url}
-                alt="Skin Tree Aesthetics logo"
-                className="mx-auto h-48 w-auto opacity-90 sm:h-64"
-              />
-              <a
-                href={phoneLink}
-                className="mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-lg font-semibold text-primary-foreground shadow-soft transition hover:bg-primary-dark"
-              >
-                <Phone className="h-5 w-5" />
-                Call Now & Book
-              </a>
-              <p className="mt-4 text-center text-sm text-muted-foreground">
-                Free consultation · On-site services · LGBTQ+ friendly
-              </p>
+            <div className="flex flex-col overflow-hidden rounded-3xl bg-card shadow-soft">
+              <div className="relative aspect-video w-full">
+                <iframe
+                  title="Skin Tree Aesthetics location map"
+                  src={mapEmbedUrl}
+                  className="absolute inset-0 h-full w-full border-0"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+              <div className="flex flex-col gap-3 p-6 sm:p-8">
+                <a
+                  href={mapLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-accent"
+                >
+                  <MapIcon className="h-4 w-4" />
+                  Open in Google Maps
+                </a>
+                <div className="grid grid-cols-2 gap-3">
+                  <a
+                    href={phoneLink}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition hover:bg-primary-dark"
+                  >
+                    <CallIcon className="h-4 w-4" />
+                    Call
+                  </a>
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[#128C7E]"
+                  >
+                    <WhatsAppIcon className="h-4 w-4" />
+                    WhatsApp
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
