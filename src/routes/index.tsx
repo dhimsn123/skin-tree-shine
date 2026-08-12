@@ -554,7 +554,7 @@ function Index() {
                     href={whatsappLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[#128C7E]"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm font-semibold text-whatsapp-foreground shadow-soft transition hover:bg-whatsapp-dark"
                   >
                     <WhatsAppIcon className="h-4 w-4" />
                     WhatsApp
