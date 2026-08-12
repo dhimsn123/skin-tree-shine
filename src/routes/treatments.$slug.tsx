@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, CalendarClock, Check, Clock, Phone } from "lucide-react";
 
-import { getTreatment, treatments } from "../data/treatments";
+import { getTreatment, treatments, type Treatment } from "../data/treatments";
 
 export const Route = createFileRoute("/treatments/$slug")({
   loader: ({ params }) => {
@@ -35,7 +35,7 @@ const phoneLink = "tel:+918768643660";
 const whatsappLink = "https://wa.me/918768643660";
 
 function TreatmentDetail() {
-  const { treatment } = Route.useLoaderData();
+  const { treatment } = Route.useLoaderData() as { treatment: Treatment };
   const related = treatments
     .filter((t) => t.category === treatment.category && t.slug !== treatment.slug)
     .slice(0, 3);
