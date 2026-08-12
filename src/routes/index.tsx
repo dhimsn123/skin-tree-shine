@@ -19,6 +19,55 @@ import { useState } from "react";
 
 import logoAsset from "../assets/skin-tree-logo.png.asset.json";
 
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.521-.075-.15-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.521.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.134 1.585 5.929L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+    </svg>
+  );
+}
+
+function CallIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.56 12.56 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.56 12.56 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+function MapIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+      <line x1="9" y1="3" x2="9" y2="18" />
+      <line x1="15" y1="6" x2="15" y2="21" />
+    </svg>
+  );
+}
+
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
@@ -48,10 +97,14 @@ export const Route = createFileRoute("/")({
 
 const phoneNumber = "087686 43660";
 const phoneLink = "tel:+918768643660";
+const whatsappNumber = "+918768643660";
+const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\+/g, "")}`;
 const address =
   "NAVEL MARKET, S.C.O 24-A, Jandpur Rd, near PALM HEIGHTS, Sector 125, Sunny Enclave, Kharar, Punjab 140301";
 const mapLink =
   "https://www.google.com/maps/search/?api=1&query=Skin+Tree+Aesthetics+Kharar";
+const mapEmbedUrl =
+  "https://maps.google.com/maps?q=Skin+Tree+Aesthetics+Kharar&t=&z=16&ie=UTF8&iwloc=&output=embed";
 
 const services = [
   {
@@ -448,22 +501,46 @@ function Index() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center rounded-3xl bg-gradient-to-br from-cream via-background to-cream-dark p-8 shadow-soft sm:p-12">
-              <img
-                src={logoAsset.url}
-                alt="Skin Tree Aesthetics logo"
-                className="mx-auto h-48 w-auto opacity-90 sm:h-64"
-              />
-              <a
-                href={phoneLink}
-                className="mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-lg font-semibold text-primary-foreground shadow-soft transition hover:bg-primary-dark"
-              >
-                <Phone className="h-5 w-5" />
-                Call Now & Book
-              </a>
-              <p className="mt-4 text-center text-sm text-muted-foreground">
-                Free consultation · On-site services · LGBTQ+ friendly
-              </p>
+            <div className="flex flex-col overflow-hidden rounded-3xl bg-card shadow-soft">
+              <div className="relative aspect-video w-full">
+                <iframe
+                  title="Skin Tree Aesthetics location map"
+                  src={mapEmbedUrl}
+                  className="absolute inset-0 h-full w-full border-0"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+              <div className="flex flex-col gap-3 p-6 sm:p-8">
+                <a
+                  href={mapLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-accent"
+                >
+                  <MapIcon className="h-4 w-4" />
+                  Open in Google Maps
+                </a>
+                <div className="grid grid-cols-2 gap-3">
+                  <a
+                    href={phoneLink}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition hover:bg-primary-dark"
+                  >
+                    <CallIcon className="h-4 w-4" />
+                    Call
+                  </a>
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[#128C7E]"
+                  >
+                    <WhatsAppIcon className="h-4 w-4" />
+                    WhatsApp
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -496,6 +573,26 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Floating action buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Chat on WhatsApp"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 transition hover:scale-110 hover:bg-[#128C7E]"
+        >
+          <WhatsAppIcon className="h-7 w-7" />
+        </a>
+        <a
+          href={phoneLink}
+          aria-label="Call now"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/30 transition hover:scale-110 hover:bg-primary-dark"
+        >
+          <CallIcon className="h-6 w-6" />
+        </a>
+      </div>
     </div>
   );
 }
