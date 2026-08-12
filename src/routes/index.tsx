@@ -18,6 +18,8 @@ import {
 import { useState } from "react";
 
 import logoAsset from "../assets/skin-tree-logo.png.asset.json";
+import { treatments } from "../data/treatments";
+
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
