@@ -255,6 +255,26 @@ function Index() {
         )}
       </header>
 
+      {/* Floating contact buttons — right side */}
+      <aside className="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-3 sm:right-5">
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Chat on WhatsApp"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-lg transition hover:scale-110 hover:bg-whatsapp-dark sm:h-14 sm:w-14"
+        >
+          <WhatsAppIcon className="h-6 w-6 sm:h-7 sm:w-7" />
+        </a>
+        <a
+          href={phoneLink}
+          aria-label="Call now"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition hover:scale-110 hover:bg-primary-dark sm:h-14 sm:w-14"
+        >
+          <CallIcon className="h-6 w-6 sm:h-7 sm:w-7" />
+        </a>
+      </aside>
+
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 opacity-40">
@@ -534,7 +554,7 @@ function Index() {
                     href={whatsappLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[#128C7E]"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm font-semibold text-whatsapp-foreground shadow-soft transition hover:bg-whatsapp-dark"
                   >
                     <WhatsAppIcon className="h-4 w-4" />
                     WhatsApp

@@ -48,6 +48,9 @@
   --color-gold-foreground: var(--gold-foreground);
   --color-cream: var(--cream);
   --color-cream-dark: var(--cream-dark);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-dark: var(--whatsapp-dark);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
 
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
@@ -89,6 +92,10 @@
   --gold-foreground: oklch(0.25 0.03 20);
   --cream: oklch(0.97 0.01 70);
   --cream-dark: oklch(0.91 0.015 60);
+
+  --whatsapp: oklch(0.7 0.22 145);
+  --whatsapp-dark: oklch(0.55 0.16 165);
+  --whatsapp-foreground: oklch(1 0 0);
 
   --font-heading: "DM Serif Display", serif;
   --font-body: "Fira Sans", sans-serif;
