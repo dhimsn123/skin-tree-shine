@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Phone,
   MapPin,
@@ -18,6 +18,8 @@ import {
 import { useState } from "react";
 
 import logoAsset from "../assets/skin-tree-logo.png.asset.json";
+import { treatments } from "../data/treatments";
+
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -199,6 +201,10 @@ function Index() {
             <a href="#services" className="text-sm font-medium text-foreground hover:text-primary">
               Services
             </a>
+            <Link to="/treatments" className="text-sm font-medium text-foreground hover:text-primary">
+              Treatments
+            </Link>
+
             <a href="#about" className="text-sm font-medium text-foreground hover:text-primary">
               About
             </a>
@@ -234,6 +240,10 @@ function Index() {
               <a href="#services" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
                 Services
               </a>
+              <Link to="/treatments" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
+                Treatments
+              </Link>
+
               <a href="#about" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
                 About
               </a>
@@ -374,8 +384,54 @@ function Index() {
               </div>
             ))}
           </div>
+
+          <div className="mt-20">
+            <h3 className="text-center font-heading text-2xl text-foreground sm:text-3xl">
+              All our treatments — tap any one to know everything about it
+            </h3>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {treatments.map((t) => (
+                <Link
+                  key={t.slug}
+                  to="/treatments/$slug"
+                  params={{ slug: t.slug }}
+                  className="group flex gap-4 rounded-2xl bg-card p-4 shadow-soft transition hover:-translate-y-1"
+                >
+                  <img
+                    src={t.image}
+                    alt={t.title}
+                    loading="lazy"
+                    width={1280}
+                    height={853}
+                    className="h-20 w-20 shrink-0 rounded-xl object-cover"
+                  />
+                  <div>
+                    <span className="text-[10px] font-semibold uppercase tracking-widest text-primary">
+                      {t.category}
+                    </span>
+                    <h4 className="font-heading text-lg leading-tight text-foreground">
+                      {t.title}
+                    </h4>
+                    <span className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-primary">
+                      Read more
+                      <ArrowRight className="h-3 w-3 transition group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <Link
+                to="/treatments"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-soft transition hover:bg-primary-dark"
+              >
+                View all treatments <ArrowRight className="h-5 w-5" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
+
 
       {/* About / Why choose */}
       <section id="about" className="py-20 sm:py-28">
