@@ -48,10 +48,14 @@ export const Route = createFileRoute("/")({
 
 const phoneNumber = "087686 43660";
 const phoneLink = "tel:+918768643660";
+const whatsappNumber = "+918768643660";
+const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\+/g, "")}`;
 const address =
   "NAVEL MARKET, S.C.O 24-A, Jandpur Rd, near PALM HEIGHTS, Sector 125, Sunny Enclave, Kharar, Punjab 140301";
 const mapLink =
   "https://www.google.com/maps/search/?api=1&query=Skin+Tree+Aesthetics+Kharar";
+const mapEmbedUrl =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3426.0!2d76.6413!3d30.7546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ff!2sSkin%20Tree%20Aesthetics!5e0!3m2!1sen!2sin!4v1";
 
 const services = [
   {
