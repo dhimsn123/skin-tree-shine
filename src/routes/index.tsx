@@ -18,6 +18,11 @@ import {
 import { useState } from "react";
 
 import logoAsset from "../assets/skin-tree-logo.png.asset.json";
+import reel1 from "../assets/clinic-reel-1.mp4.asset.json";
+import reel2 from "../assets/clinic-reel-2.mp4.asset.json";
+import reel3 from "../assets/clinic-reel-3.mp4.asset.json";
+
+const clinicReels: string[] = [reel1.url, reel2.url, reel3.url];
 import { treatments } from "../data/treatments";
 
 
