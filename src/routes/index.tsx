@@ -230,6 +230,9 @@ function Index() {
             <a href="#reviews" className="text-sm font-medium text-foreground hover:text-primary">
               Reviews
             </a>
+            <a href="#photos" className="text-sm font-medium text-foreground hover:text-primary">
+              Photos
+            </a>
             <a href="#contact" className="text-sm font-medium text-foreground hover:text-primary">
               Contact
             </a>
