@@ -433,7 +433,38 @@ function Index() {
       </section>
 
 
-      {/* About / Why choose */}
+      {/* Video gallery */}
+      <section id="videos" className="bg-cream/50 py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+              Inside the clinic
+            </p>
+            <h2 className="mt-3 font-heading text-3xl text-foreground sm:text-4xl">
+              Real moments from Skin Tree Aesthetics
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              A quick look at our treatments, care and clinic space.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {clinicReels.map((src, i) => (
+              <video
+                key={src}
+                src={src}
+                controls
+                playsInline
+                preload="metadata"
+                className="aspect-[9/16] w-full rounded-2xl bg-black object-cover shadow-soft"
+                aria-label={`Skin Tree Aesthetics clinic video ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <section id="about" className="py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
