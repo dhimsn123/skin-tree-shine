@@ -272,6 +272,9 @@ function Index() {
               <a href="#reviews" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
                 Reviews
               </a>
+              <a href="#photos" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
+                Photos
+              </a>
               <a href="#contact" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
                 Contact
               </a>
