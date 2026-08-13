@@ -21,8 +21,22 @@ import logoAsset from "../assets/skin-tree-logo.png.asset.json";
 import reel1 from "../assets/clinic-reel-1.mp4.asset.json";
 import reel2 from "../assets/clinic-reel-2.mp4.asset.json";
 import reel3 from "../assets/clinic-reel-3.mp4.asset.json";
+import clinicReception from "../assets/clinic-reception.jpg";
+import clinicTreatmentRoom from "../assets/clinic-treatment-room.jpg";
+import clinicConsultation from "../assets/clinic-consultation.jpg";
+import clinicFacial from "../assets/clinic-facial.jpg";
+import clinicLaserRoom from "../assets/clinic-laser-room.jpg";
+import clinicHairSession from "../assets/clinic-hair-session.jpg";
 
 const clinicReels: string[] = [reel1.url, reel2.url, reel3.url];
+const clinicPhotos: { src: string; alt: string }[] = [
+  { src: clinicReception, alt: "Skin Tree Aesthetics reception and waiting area" },
+  { src: clinicConsultation, alt: "Doctor consultation at Skin Tree Aesthetics" },
+  { src: clinicTreatmentRoom, alt: "Modern treatment room at Skin Tree Aesthetics" },
+  { src: clinicFacial, alt: "Professional facial treatment in progress" },
+  { src: clinicLaserRoom, alt: "Laser hair reduction treatment room" },
+  { src: clinicHairSession, alt: "Hair treatment session at the clinic" },
+];
 import { treatments } from "../data/treatments";
 
 
