@@ -21,8 +21,22 @@ import logoAsset from "../assets/skin-tree-logo.png.asset.json";
 import reel1 from "../assets/clinic-reel-1.mp4.asset.json";
 import reel2 from "../assets/clinic-reel-2.mp4.asset.json";
 import reel3 from "../assets/clinic-reel-3.mp4.asset.json";
+import clinicReception from "../assets/clinic-reception.jpg";
+import clinicTreatmentRoom from "../assets/clinic-treatment-room.jpg";
+import clinicConsultation from "../assets/clinic-consultation.jpg";
+import clinicFacial from "../assets/clinic-facial.jpg";
+import clinicLaserRoom from "../assets/clinic-laser-room.jpg";
+import clinicHairSession from "../assets/clinic-hair-session.jpg";
 
 const clinicReels: string[] = [reel1.url, reel2.url, reel3.url];
+const clinicPhotos: { src: string; alt: string }[] = [
+  { src: clinicReception, alt: "Skin Tree Aesthetics reception and waiting area" },
+  { src: clinicConsultation, alt: "Doctor consultation at Skin Tree Aesthetics" },
+  { src: clinicTreatmentRoom, alt: "Modern treatment room at Skin Tree Aesthetics" },
+  { src: clinicFacial, alt: "Professional facial treatment in progress" },
+  { src: clinicLaserRoom, alt: "Laser hair reduction treatment room" },
+  { src: clinicHairSession, alt: "Hair treatment session at the clinic" },
+];
 import { treatments } from "../data/treatments";
 
 
@@ -216,6 +230,9 @@ function Index() {
             <a href="#reviews" className="text-sm font-medium text-foreground hover:text-primary">
               Reviews
             </a>
+            <a href="#photos" className="text-sm font-medium text-foreground hover:text-primary">
+              Photos
+            </a>
             <a href="#contact" className="text-sm font-medium text-foreground hover:text-primary">
               Contact
             </a>
@@ -254,6 +271,9 @@ function Index() {
               </a>
               <a href="#reviews" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
                 Reviews
+              </a>
+              <a href="#photos" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
+                Photos
               </a>
               <a href="#contact" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
                 Contact
@@ -469,6 +489,46 @@ function Index() {
         </div>
       </section>
 
+      {/* Photo gallery */}
+      <section id="photos" className="py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+              Photo gallery
+            </p>
+            <h2 className="mt-3 font-heading text-3xl text-foreground sm:text-4xl">
+              Glimpses of our clinic
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Clean, comfortable and fully equipped spaces for your skin, hair and laser care.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {clinicPhotos.map((photo, i) => (
+              <div
+                key={photo.alt}
+                className={`group relative overflow-hidden rounded-2xl bg-card shadow-soft ${
+                  i === 0 || i === 3 ? "sm:col-span-2 lg:col-span-1" : ""
+                }`}
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  width={1280}
+                  height={853}
+                  className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+                <p className="absolute bottom-0 left-0 w-full translate-y-4 p-5 text-sm font-medium text-white opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  {photo.alt}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section id="about" className="py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
