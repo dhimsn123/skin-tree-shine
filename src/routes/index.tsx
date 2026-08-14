@@ -311,6 +311,10 @@ function Index() {
               <Link to="/treatments" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
                 Treatments
               </Link>
+              <a href="#results" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
+                Results
+              </a>
+
 
               <a href="#about" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
                 About
