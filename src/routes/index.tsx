@@ -658,104 +658,96 @@ function Index() {
       {/* Contact */}
       <section id="contact" className="py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-                Visit us
-              </p>
-              <h2 className="mt-3 font-heading text-3xl text-foreground sm:text-4xl">
-                Book your appointment today
-              </h2>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                Walk-ins are welcome, but appointments are recommended. Call us
-                directly or find us on Google Maps for directions.
-              </p>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+              Our locations
+            </p>
+            <h2 className="mt-3 font-heading text-3xl text-foreground sm:text-4xl">
+              Two clinics, same expert care
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              Walk-ins are welcome, but appointments are recommended. Pick the
+              branch closest to you and call or WhatsApp us directly.
+            </p>
+          </div>
 
-              <div className="mt-10 space-y-6">
-                <a
-                  href={phoneLink}
-                  className="flex items-start gap-4 rounded-2xl bg-card p-5 shadow-soft transition hover:bg-accent"
-                >
-                  <div className="rounded-xl bg-primary/10 p-3 text-primary">
-                    <Phone className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <p className="font-heading text-lg text-foreground">Phone</p>
-                    <p className="mt-1 text-muted-foreground">{phoneNumber}</p>
-                  </div>
-                </a>
+          <div className="mt-14 grid gap-10 lg:grid-cols-2">
+            {branches.map((branch) => (
+              <div
+                key={branch.name}
+                className="flex flex-col overflow-hidden rounded-3xl bg-card shadow-soft"
+              >
+                <div className="relative aspect-video w-full">
+                  <iframe
+                    title={`${branch.name} location map`}
+                    src={branch.mapEmbedUrl}
+                    className="absolute inset-0 h-full w-full border-0"
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
 
-                <a
-                  href={mapLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-start gap-4 rounded-2xl bg-card p-5 shadow-soft transition hover:bg-accent"
-                >
-                  <div className="rounded-xl bg-primary/10 p-3 text-primary">
-                    <MapPin className="h-6 w-6" />
-                  </div>
+                <div className="flex flex-1 flex-col gap-5 p-6 sm:p-8">
                   <div>
-                    <p className="font-heading text-lg text-foreground">Address</p>
-                    <p className="mt-1 text-muted-foreground">{address}</p>
+                    <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary">
+                      {branch.tag}
+                    </span>
+                    <h3 className="mt-3 font-heading text-2xl text-foreground">
+                      {branch.name}
+                    </h3>
                   </div>
-                </a>
 
-                <div className="flex items-start gap-4 rounded-2xl bg-card p-5 shadow-soft">
-                  <div className="rounded-xl bg-primary/10 p-3 text-primary">
-                    <Clock className="h-6 w-6" />
+                  <div className="space-y-3 text-sm">
+                    <p className="flex items-start gap-3 text-muted-foreground">
+                      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      {branch.address}
+                    </p>
+                    <p className="flex items-start gap-3 text-muted-foreground">
+                      <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      {branch.phoneNumber}
+                    </p>
+                    <p className="flex items-start gap-3 text-muted-foreground">
+                      <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      {branch.hours}
+                    </p>
                   </div>
-                  <div>
-                    <p className="font-heading text-lg text-foreground">Hours</p>
-                    <p className="mt-1 text-muted-foreground">Open · Closes 7 pm</p>
-                    <p className="text-sm text-muted-foreground">Appointment required</p>
+
+                  <div className="mt-auto flex flex-col gap-3">
+                    <a
+                      href={branch.mapLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-accent"
+                    >
+                      <MapIcon className="h-4 w-4" />
+                      Open in Google Maps
+                    </a>
+                    <div className="grid grid-cols-2 gap-3">
+                      <a
+                        href={branch.phoneLink}
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition hover:bg-primary-dark"
+                      >
+                        <CallIcon className="h-4 w-4" />
+                        Call
+                      </a>
+                      <a
+                        href={branch.whatsappLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm font-semibold text-whatsapp-foreground shadow-soft transition hover:bg-whatsapp-dark"
+                      >
+                        <WhatsAppIcon className="h-4 w-4" />
+                        WhatsApp
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="flex flex-col overflow-hidden rounded-3xl bg-card shadow-soft">
-              <div className="relative aspect-video w-full">
-                <iframe
-                  title="Skin Tree Aesthetics location map"
-                  src={mapEmbedUrl}
-                  className="absolute inset-0 h-full w-full border-0"
-                  loading="lazy"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-              <div className="flex flex-col gap-3 p-6 sm:p-8">
-                <a
-                  href={mapLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-accent"
-                >
-                  <MapIcon className="h-4 w-4" />
-                  Open in Google Maps
-                </a>
-                <div className="grid grid-cols-2 gap-3">
-                  <a
-                    href={phoneLink}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition hover:bg-primary-dark"
-                  >
-                    <CallIcon className="h-4 w-4" />
-                    Call
-                  </a>
-                  <a
-                    href={whatsappLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm font-semibold text-whatsapp-foreground shadow-soft transition hover:bg-whatsapp-dark"
-                  >
-                    <WhatsAppIcon className="h-4 w-4" />
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
+
       </section>
 
       {/* Footer */}
