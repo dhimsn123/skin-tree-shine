@@ -127,6 +127,46 @@ const mapLink =
 const mapEmbedUrl =
   "https://maps.google.com/maps?q=Skin+Tree+Aesthetics+Kharar&t=&z=16&ie=UTF8&iwloc=&output=embed";
 
+type Branch = {
+  name: string;
+  tag: string;
+  address: string;
+  phoneNumber: string;
+  phoneLink: string;
+  whatsappLink: string;
+  hours: string;
+  mapLink: string;
+  mapEmbedUrl: string;
+};
+
+const branches: Branch[] = [
+  {
+    name: "Kharar (Main Clinic)",
+    tag: "Sunny Enclave",
+    address,
+    phoneNumber,
+    phoneLink,
+    whatsappLink,
+    hours: "Open · Closes 7 pm · Appointment recommended",
+    mapLink,
+    mapEmbedUrl,
+  },
+  {
+    name: "Mohali Branch",
+    tag: "Second location",
+    address: "Sector 70, Mohali, Punjab",
+    phoneNumber,
+    phoneLink,
+    whatsappLink,
+    hours: "Open · Closes 7 pm · Appointment recommended",
+    mapLink:
+      "https://www.google.com/maps/search/?api=1&query=Skin+Tree+Aesthetics+Mohali",
+    mapEmbedUrl:
+      "https://maps.google.com/maps?q=Skin+Tree+Aesthetics+Mohali&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  },
+];
+
+
 const services = [
   {
     icon: Sparkles,
