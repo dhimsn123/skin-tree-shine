@@ -38,6 +38,8 @@ const clinicPhotos: { src: string; alt: string }[] = [
   { src: clinicHairSession, alt: "Hair treatment session at the clinic" },
 ];
 import { treatments } from "../data/treatments";
+import { BeforeAfterGallery } from "../components/BeforeAfterGallery";
+
 
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -263,6 +265,10 @@ function Index() {
             <Link to="/treatments" className="text-sm font-medium text-foreground hover:text-primary">
               Treatments
             </Link>
+            <a href="#results" className="text-sm font-medium text-foreground hover:text-primary">
+              Results
+            </a>
+
 
             <a href="#about" className="text-sm font-medium text-foreground hover:text-primary">
               About
@@ -305,6 +311,10 @@ function Index() {
               <Link to="/treatments" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
                 Treatments
               </Link>
+              <a href="#results" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
+                Results
+              </a>
+
 
               <a href="#about" className="text-base font-medium text-foreground" onClick={() => setMobileMenuOpen(false)}>
                 About
@@ -499,7 +509,27 @@ function Index() {
 
 
       {/* Video gallery */}
+      {/* Before & after results */}
+      <section id="results" className="py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+              Real results
+            </p>
+            <h2 className="mt-3 font-heading text-3xl text-foreground sm:text-4xl">
+              Before &amp; after gallery
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              Hair fall, skin and laser results from our treatment protocols —
+              browse by category to see what is possible.
+            </p>
+          </div>
+          <BeforeAfterGallery />
+        </div>
+      </section>
+
       <section id="videos" className="bg-cream/50 py-20 sm:py-28">
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-primary">
