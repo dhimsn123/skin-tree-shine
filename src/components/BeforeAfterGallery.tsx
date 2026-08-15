@@ -1,17 +1,13 @@
 import { useState } from "react";
 
-import hair1Before from "../assets/ba-hair1-before.jpg";
-import hair1After from "../assets/ba-hair1-after.jpg";
-import skin1Before from "../assets/ba-skin1-before.jpg";
-import skin1After from "../assets/ba-skin1-after.jpg";
-import skin2Before from "../assets/ba-skin2-before.jpg";
-import skin2After from "../assets/ba-skin2-after.jpg";
-import laser1Before from "../assets/ba-laser1-before.jpg";
-import laser1After from "../assets/ba-laser1-after.jpg";
-import laser2Before from "../assets/ba-laser2-before.jpg";
-import laser2After from "../assets/ba-laser2-after.jpg";
+import acneBefore from "../assets/ba-acne-before.jpg.asset.json";
+import acneAfter from "../assets/ba-acne-after.jpg.asset.json";
+import skinBefore from "../assets/ba-m-before.jpg.asset.json";
+import skinAfter from "../assets/ba-m-after.jpg.asset.json";
+import tattooBefore from "../assets/ba-tattoo-before.jpg.asset.json";
+import tattooAfter from "../assets/ba-tattoo-after.jpg.asset.json";
 
-type CategoryId = "hair" | "skin" | "laser";
+type CategoryId = "acne" | "skin" | "laser";
 
 type ResultCase = {
   category: CategoryId;
@@ -24,56 +20,38 @@ type ResultCase = {
 };
 
 const categories: { id: CategoryId; label: string }[] = [
-  { id: "hair", label: "Hair Fall & Regrowth" },
+  { id: "acne", label: "Acne & Acne Marks" },
   { id: "skin", label: "Skin & Pigmentation" },
-  { id: "laser", label: "Laser Hair Reduction" },
+  { id: "laser", label: "Laser Tattoo Removal" },
 ];
 
 const results: ResultCase[] = [
   {
-    category: "hair",
-    title: "Female pattern hair thinning",
-    treatment: "GFC + hair regrowth protocol",
-    duration: "6 sessions · 5 months",
-    before: hair1Before,
-    after: hair1After,
-    alt: "Scalp hair density before and after hair fall treatment",
+    category: "acne",
+    title: "Active acne on cheeks",
+    treatment: "Acne management + chemical peels",
+    duration: "Multiple sessions",
+    before: acneBefore.url,
+    after: acneAfter.url,
+    alt: "Cheek skin before and after acne treatment at Skin Tree Aesthetics",
   },
   {
     category: "skin",
-    title: "Active acne & post-acne marks",
-    treatment: "Chemical peels + acne management",
-    duration: "5 sessions · 3 months",
-    before: skin1Before,
-    after: skin1After,
-    alt: "Cheek skin before and after acne treatment",
-  },
-  {
-    category: "skin",
-    title: "Melasma & uneven skin tone",
-    treatment: "Carbon laser + pigmentation care",
-    duration: "6 sessions · 4 months",
-    before: skin2Before,
-    after: skin2After,
-    alt: "Facial pigmentation before and after laser toning",
+    title: "Dull, sun-damaged facial skin",
+    treatment: "Medi-facial + pigmentation care",
+    duration: "Multiple sessions",
+    before: skinBefore.url,
+    after: skinAfter.url,
+    alt: "Facial skin before and after pigmentation and skin brightening treatment",
   },
   {
     category: "laser",
-    title: "Unwanted arm hair",
-    treatment: "Diode laser hair reduction",
-    duration: "6 sessions · 6 months",
-    before: laser1Before,
-    after: laser1After,
-    alt: "Forearm before and after laser hair reduction",
-  },
-  {
-    category: "laser",
-    title: "Beard line & ingrown bumps",
-    treatment: "Laser hair reduction (face & neck)",
-    duration: "7 sessions · 7 months",
-    before: laser2Before,
-    after: laser2After,
-    alt: "Beard area before and after laser hair reduction",
+    title: "Chest tattoo removal",
+    treatment: "Q-switch laser tattoo removal",
+    duration: "In-progress sessions",
+    before: tattooBefore.url,
+    after: tattooAfter.url,
+    alt: "Tattoo before and after laser tattoo removal sessions",
   },
 ];
 
@@ -116,9 +94,7 @@ export function BeforeAfterGallery() {
                   src={item.before}
                   alt={`Before — ${item.alt}`}
                   loading="lazy"
-                  width={800}
-                  height={800}
-                  className="aspect-square w-full object-cover"
+                  className="aspect-3/4 w-full object-cover"
                 />
                 <span className="absolute left-3 top-3 rounded-full bg-foreground/75 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-background">
                   Before
@@ -129,9 +105,7 @@ export function BeforeAfterGallery() {
                   src={item.after}
                   alt={`After — ${item.alt}`}
                   loading="lazy"
-                  width={800}
-                  height={800}
-                  className="aspect-square w-full object-cover"
+                  className="aspect-3/4 w-full object-cover"
                 />
                 <span className="absolute right-3 top-3 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-primary-foreground">
                   After
@@ -156,9 +130,9 @@ export function BeforeAfterGallery() {
       </div>
 
       <p className="mt-10 text-center text-xs leading-relaxed text-muted-foreground">
-        Representative results. Outcomes vary from person to person depending on
-        skin type, hair type, medical history and number of sessions. Photos are
-        shared for illustration with patient consent policy in place.
+        Real patient photos shared with consent — faces are blurred to protect
+        privacy. Outcomes vary from person to person depending on skin type, hair
+        type, medical history and number of sessions.
       </p>
     </div>
   );
