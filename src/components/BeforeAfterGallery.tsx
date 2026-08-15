@@ -2,8 +2,6 @@ import { useState } from "react";
 
 import hair1Before from "../assets/ba-hair1-before.jpg";
 import hair1After from "../assets/ba-hair1-after.jpg";
-import hair2Before from "../assets/ba-hair2-before.jpg";
-import hair2After from "../assets/ba-hair2-after.jpg";
 import skin1Before from "../assets/ba-skin1-before.jpg";
 import skin1After from "../assets/ba-skin1-after.jpg";
 import skin2Before from "../assets/ba-skin2-before.jpg";
@@ -40,15 +38,6 @@ const results: ResultCase[] = [
     before: hair1Before,
     after: hair1After,
     alt: "Scalp hair density before and after hair fall treatment",
-  },
-  {
-    category: "hair",
-    title: "Receding hairline in men",
-    treatment: "PRP therapy + medical management",
-    duration: "8 sessions · 7 months",
-    before: hair2Before,
-    after: hair2After,
-    alt: "Male hairline before and after PRP hair treatment",
   },
   {
     category: "skin",
