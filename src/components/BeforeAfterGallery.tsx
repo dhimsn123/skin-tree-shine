@@ -7,7 +7,7 @@ import skinAfter from "../assets/ba-m-after.jpg.asset.json";
 import tattooBefore from "../assets/ba-tattoo-before.jpg.asset.json";
 import tattooAfter from "../assets/ba-tattoo-after.jpg.asset.json";
 
-type CategoryId = "acne" | "skin" | "laser";
+type CategoryId = "acne" | "hair" | "laser";
 
 type ResultCase = {
   category: CategoryId;
@@ -21,7 +21,7 @@ type ResultCase = {
 
 const categories: { id: CategoryId; label: string }[] = [
   { id: "acne", label: "Acne & Acne Marks" },
-  { id: "skin", label: "Skin & Pigmentation" },
+  { id: "hair", label: "Beard & Hair Growth" },
   { id: "laser", label: "Laser Tattoo Removal" },
 ];
 
@@ -36,13 +36,13 @@ const results: ResultCase[] = [
     alt: "Cheek skin before and after acne treatment at Skin Tree Aesthetics",
   },
   {
-    category: "skin",
-    title: "Dull, sun-damaged facial skin",
-    treatment: "Medi-facial + pigmentation care",
+    category: "hair",
+    title: "Patchy beard — no growth",
+    treatment: "Beard growth therapy (GFC / PRP sessions)",
     duration: "Multiple sessions",
     before: skinBefore.url,
     after: skinAfter.url,
-    alt: "Facial skin before and after pigmentation and skin brightening treatment",
+    alt: "Beard before and after beard growth treatment at Skin Tree Aesthetics",
   },
   {
     category: "laser",
