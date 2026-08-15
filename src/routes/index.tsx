@@ -21,21 +21,29 @@ import logoAsset from "../assets/skin-tree-logo.png.asset.json";
 import reel1 from "../assets/clinic-reel-1.mp4.asset.json";
 import reel2 from "../assets/clinic-reel-2.mp4.asset.json";
 import reel3 from "../assets/clinic-reel-3.mp4.asset.json";
-import clinicReception from "../assets/clinic-reception.jpg";
-import clinicTreatmentRoom from "../assets/clinic-treatment-room.jpg";
-import clinicConsultation from "../assets/clinic-consultation.jpg";
-import clinicFacial from "../assets/clinic-facial.jpg";
-import clinicLaserRoom from "../assets/clinic-laser-room.jpg";
-import clinicHairSession from "../assets/clinic-hair-session.jpg";
+import photoEntrance from "../assets/real-IMG_0001.jpg.asset.json";
+import photoLaserRoom from "../assets/real-IMG_9983.jpg.asset.json";
+import photoLobby from "../assets/real-IMG_9989.jpg.asset.json";
+import photoDoctorCabin from "../assets/real-IMG_9990.jpg.asset.json";
+import photoReception from "../assets/real-IMG_9999.jpg.asset.json";
+import photoMachines1 from "../assets/real-PHOTO-2025-04-14-17-10-53_1.jpg.asset.json";
+import photoMachines2 from "../assets/real-PHOTO-2025-04-14-17-10-54.jpg.asset.json";
+import photoTeam from "../assets/real-PHOTO-2025-04-14-17-10-56_1.jpg.asset.json";
+import photoHairProcedure from "../assets/real-PHOTO-2025-04-14-17-10-56.jpg.asset.json";
+import photoDoctors from "../assets/real-PHOTO-2025-04-14-17-10-57.jpg.asset.json";
 
 const clinicReels: string[] = [reel1.url, reel2.url, reel3.url];
 const clinicPhotos: { src: string; alt: string }[] = [
-  { src: clinicReception, alt: "Skin Tree Aesthetics reception and waiting area" },
-  { src: clinicConsultation, alt: "Doctor consultation at Skin Tree Aesthetics" },
-  { src: clinicTreatmentRoom, alt: "Modern treatment room at Skin Tree Aesthetics" },
-  { src: clinicFacial, alt: "Professional facial treatment in progress" },
-  { src: clinicLaserRoom, alt: "Laser hair reduction treatment room" },
-  { src: clinicHairSession, alt: "Hair treatment session at the clinic" },
+  { src: photoEntrance.url, alt: "Skin Tree Aesthetics clinic entrance in Sunny Enclave, Kharar" },
+  { src: photoReception.url, alt: "Skin Tree Aesthetics reception with gold logo wall" },
+  { src: photoLobby.url, alt: "Clinic waiting area and reception corridor" },
+  { src: photoDoctorCabin.url, alt: "Doctor's consultation cabin with certifications" },
+  { src: photoLaserRoom.url, alt: "Laser and treatment room with FDA approved diode laser" },
+  { src: photoMachines1.url, alt: "Advanced skin and laser machines at the clinic" },
+  { src: photoMachines2.url, alt: "Hydrafacial and laser equipment setup" },
+  { src: photoHairProcedure.url, alt: "GFC hair treatment procedure by our doctors" },
+  { src: photoDoctors.url, alt: "Dr. Navsimran Singh and Dr. Aakriti Raj" },
+  { src: photoTeam.url, alt: "Skin Tree Aesthetics medical team" },
 ];
 import { treatments } from "../data/treatments";
 import { BeforeAfterGallery } from "../components/BeforeAfterGallery";
