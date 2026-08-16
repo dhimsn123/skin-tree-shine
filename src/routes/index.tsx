@@ -27,10 +27,10 @@ import photoLobby from "../assets/real-IMG_9989.jpg.asset.json";
 import photoDoctorCabin from "../assets/real-IMG_9990.jpg.asset.json";
 import photoReception from "../assets/real-IMG_9999.jpg.asset.json";
 import photoMachines1 from "../assets/real-PHOTO-2025-04-14-17-10-53_1.jpg.asset.json";
-import photoMachines2 from "../assets/real-PHOTO-2025-04-14-17-10-54.jpg.asset.json";
 import photoTeam from "../assets/real-PHOTO-2025-04-14-17-10-56_1.jpg.asset.json";
 import photoHairProcedure from "../assets/real-PHOTO-2025-04-14-17-10-56.jpg.asset.json";
-import photoDoctors from "../assets/real-PHOTO-2025-04-14-17-10-57.jpg.asset.json";
+import photoDoctors from "../assets/doctors-duo.jpg.asset.json";
+import clinicTour from "../assets/clinic-photo-tour.mp4.asset.json";
 
 const clinicReels: string[] = [reel1.url, reel2.url, reel3.url];
 const clinicPhotos: { src: string; alt: string }[] = [
@@ -40,13 +40,14 @@ const clinicPhotos: { src: string; alt: string }[] = [
   { src: photoDoctorCabin.url, alt: "Doctor's consultation cabin with certifications" },
   { src: photoLaserRoom.url, alt: "Laser and treatment room with FDA approved diode laser" },
   { src: photoMachines1.url, alt: "Advanced skin and laser machines at the clinic" },
-  { src: photoMachines2.url, alt: "Hydrafacial and laser equipment setup" },
   { src: photoHairProcedure.url, alt: "GFC hair treatment procedure by our doctors" },
-  { src: photoDoctors.url, alt: "Dr. Navsimran Singh and Dr. Aakriti Raj" },
+  { src: photoDoctors.url, alt: "Our doctors at Skin Tree Aesthetics reception" },
   { src: photoTeam.url, alt: "Skin Tree Aesthetics medical team" },
 ];
 import { treatments } from "../data/treatments";
 import { BeforeAfterGallery } from "../components/BeforeAfterGallery";
+import { AppointmentForm } from "../components/AppointmentForm";
+import { ClinicChatBot } from "../components/ClinicChatBot";
 
 
 
@@ -151,8 +152,8 @@ type Branch = {
 
 const branches: Branch[] = [
   {
-    name: "Kharar (Main Clinic)",
-    tag: "Sunny Enclave",
+    name: "Kharar — Sunny Enclave",
+    tag: "Sector 125, Kharar",
     address,
     phoneNumber,
     phoneLink,
@@ -162,8 +163,8 @@ const branches: Branch[] = [
     mapEmbedUrl,
   },
   {
-    name: "Mohali Branch",
-    tag: "Second location",
+    name: "Mohali — Sector 70",
+    tag: "Sector 70, Mohali",
     address: "Sector 70, Mohali, Punjab",
     phoneNumber,
     phoneLink,
@@ -551,7 +552,20 @@ function Index() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 overflow-hidden rounded-3xl bg-black shadow-soft">
+            <video
+              src={clinicTour.url}
+              controls
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="aspect-video w-full object-cover"
+              aria-label="Clinic walkthrough video of Skin Tree Aesthetics reception"
+            />
+          </div>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {clinicReels.map((src, i) => (
               <video
                 key={src}
@@ -693,6 +707,25 @@ function Index() {
         </div>
       </section>
 
+      {/* Appointment form */}
+      <section id="appointment" className="bg-cream/50 py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+              Book a visit
+            </p>
+            <h2 className="mt-3 font-heading text-3xl text-foreground sm:text-4xl">
+              Appointment request form
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              Fill in your details and send — your request reaches Skin Tree
+              Aesthetics directly and our team confirms your slot.
+            </p>
+          </div>
+          <AppointmentForm />
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -705,7 +738,7 @@ function Index() {
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
               Walk-ins are welcome, but appointments are recommended. Pick the
-              branch closest to you and call or WhatsApp us directly.
+              location closest to you and call or WhatsApp us directly.
             </p>
           </div>
 
