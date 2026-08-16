@@ -31,8 +31,8 @@ const results: ResultCase[] = [
     title: "Active acne on cheeks",
     treatment: "Acne management + chemical peels",
     duration: "Multiple sessions",
-    before: acneBefore.url,
-    after: acneAfter.url,
+    before: acneAfter.url,
+    after: acneBefore.url,
     alt: "Cheek skin before and after acne treatment at Skin Tree Aesthetics",
   },
   {
@@ -40,8 +40,8 @@ const results: ResultCase[] = [
     title: "Patchy beard — no growth",
     treatment: "Beard growth therapy (GFC / PRP sessions)",
     duration: "Multiple sessions",
-    before: skinBefore.url,
-    after: skinAfter.url,
+    before: skinAfter.url,
+    after: skinBefore.url,
     alt: "Beard before and after beard growth treatment at Skin Tree Aesthetics",
   },
   {
@@ -49,8 +49,8 @@ const results: ResultCase[] = [
     title: "Chest tattoo removal",
     treatment: "Q-switch laser tattoo removal",
     duration: "In-progress sessions",
-    before: tattooBefore.url,
-    after: tattooAfter.url,
+    before: tattooAfter.url,
+    after: tattooBefore.url,
     alt: "Tattoo before and after laser tattoo removal sessions",
   },
 ];
