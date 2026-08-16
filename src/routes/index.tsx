@@ -40,7 +40,7 @@ const clinicPhotos: { src: string; alt: string; pos?: string }[] = [
   { src: photoDoctorCabin.url, alt: "Doctor's consultation cabin with certifications" },
   { src: photoLaserRoom.url, alt: "Laser and treatment room with FDA approved diode laser" },
   { src: photoMachines1.url, alt: "Advanced skin and laser machines at the clinic" },
-  { src: photoHairProcedure.url, alt: "GFC hair treatment procedure by our doctors", pos: "object-top" },
+  { src: photoHairProcedure.url, alt: "GFC hair treatment procedure by our doctors", pos: "object-cover object-top" },
   { src: photoDoctors.url, alt: "Our doctors at Skin Tree Aesthetics reception", pos: "object-contain bg-secondary" },
   { src: photoTeam.url, alt: "Skin Tree Aesthetics medical team", pos: "object-contain bg-secondary" },
 ];
