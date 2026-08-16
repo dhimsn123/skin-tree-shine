@@ -611,7 +611,7 @@ function Index() {
                   loading="lazy"
                   width={1280}
                   height={853}
-                  className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
+                  className={`h-64 w-full transition duration-500 group-hover:scale-105 ${photo.pos ?? "object-cover"}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
                 <p className="absolute bottom-0 left-0 w-full translate-y-4 p-5 text-sm font-medium text-white opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
