@@ -843,11 +843,15 @@ function Index() {
             <p className="text-center text-sm text-muted-foreground md:text-right">
               © {new Date().getFullYear()} Skin Tree Aesthetics. All rights reserved.
               <br />
+              skintreeaesthetics21@gmail.com · 87686 43660
+              <br />
               Women-owned · LGBTQ+ friendly · Kharar, Punjab
             </p>
           </div>
         </div>
       </footer>
+
+      <ClinicChatBot />
     </div>
   );
 }
