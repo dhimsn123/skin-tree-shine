@@ -33,17 +33,18 @@ import photoDoctors from "../assets/doctors-duo.jpg.asset.json";
 import clinicTour from "../assets/clinic-photo-tour.mp4.asset.json";
 
 const clinicReels: string[] = [reel1.url, reel2.url, reel3.url];
-const clinicPhotos: { src: string; alt: string }[] = [
+const clinicPhotos: { src: string; alt: string; pos?: string }[] = [
   { src: photoEntrance.url, alt: "Skin Tree Aesthetics clinic entrance in Sunny Enclave, Kharar" },
   { src: photoReception.url, alt: "Skin Tree Aesthetics reception with gold logo wall" },
   { src: photoLobby.url, alt: "Clinic waiting area and reception corridor" },
   { src: photoDoctorCabin.url, alt: "Doctor's consultation cabin with certifications" },
   { src: photoLaserRoom.url, alt: "Laser and treatment room with FDA approved diode laser" },
   { src: photoMachines1.url, alt: "Advanced skin and laser machines at the clinic" },
-  { src: photoHairProcedure.url, alt: "GFC hair treatment procedure by our doctors" },
-  { src: photoDoctors.url, alt: "Our doctors at Skin Tree Aesthetics reception" },
-  { src: photoTeam.url, alt: "Skin Tree Aesthetics medical team" },
+  { src: photoHairProcedure.url, alt: "GFC hair treatment procedure by our doctors", pos: "object-top" },
+  { src: photoDoctors.url, alt: "Our doctors at Skin Tree Aesthetics reception", pos: "object-contain bg-secondary" },
+  { src: photoTeam.url, alt: "Skin Tree Aesthetics medical team", pos: "object-contain bg-secondary" },
 ];
+
 import { treatments } from "../data/treatments";
 import { BeforeAfterGallery } from "../components/BeforeAfterGallery";
 import { AppointmentForm } from "../components/AppointmentForm";
