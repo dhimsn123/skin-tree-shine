@@ -33,17 +33,18 @@ import photoDoctors from "../assets/doctors-duo.jpg.asset.json";
 import clinicTour from "../assets/clinic-photo-tour.mp4.asset.json";
 
 const clinicReels: string[] = [reel1.url, reel2.url, reel3.url];
-const clinicPhotos: { src: string; alt: string }[] = [
+const clinicPhotos: { src: string; alt: string; pos?: string }[] = [
   { src: photoEntrance.url, alt: "Skin Tree Aesthetics clinic entrance in Sunny Enclave, Kharar" },
   { src: photoReception.url, alt: "Skin Tree Aesthetics reception with gold logo wall" },
   { src: photoLobby.url, alt: "Clinic waiting area and reception corridor" },
   { src: photoDoctorCabin.url, alt: "Doctor's consultation cabin with certifications" },
   { src: photoLaserRoom.url, alt: "Laser and treatment room with FDA approved diode laser" },
   { src: photoMachines1.url, alt: "Advanced skin and laser machines at the clinic" },
-  { src: photoHairProcedure.url, alt: "GFC hair treatment procedure by our doctors" },
-  { src: photoDoctors.url, alt: "Our doctors at Skin Tree Aesthetics reception" },
-  { src: photoTeam.url, alt: "Skin Tree Aesthetics medical team" },
+  { src: photoHairProcedure.url, alt: "GFC hair treatment procedure by our doctors", pos: "object-cover object-top" },
+  { src: photoDoctors.url, alt: "Our doctors at Skin Tree Aesthetics reception", pos: "object-contain bg-secondary" },
+  { src: photoTeam.url, alt: "Skin Tree Aesthetics medical team", pos: "object-contain bg-secondary" },
 ];
+
 import { treatments } from "../data/treatments";
 import { BeforeAfterGallery } from "../components/BeforeAfterGallery";
 import { AppointmentForm } from "../components/AppointmentForm";
@@ -610,7 +611,7 @@ function Index() {
                   loading="lazy"
                   width={1280}
                   height={853}
-                  className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
+                  className={`h-64 w-full transition duration-500 group-hover:scale-105 ${photo.pos ?? "object-cover"}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
                 <p className="absolute bottom-0 left-0 w-full translate-y-4 p-5 text-sm font-medium text-white opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
