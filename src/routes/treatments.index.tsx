@@ -104,19 +104,29 @@ function TreatmentsIndex() {
       </section>
 
       <section className="bg-cream/50 py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
           <h2 className="font-heading text-3xl text-foreground">Take a look inside our clinic</h2>
           <p className="mt-3 text-muted-foreground">
-            A calm, hygienic and welcoming space in Sunny Enclave, Kharar.
+            A real collage of our space — reception, consultation cabins, laser
+            rooms and the technology we treat you with.
           </p>
-          <video
-            className="mt-8 w-full rounded-2xl shadow-soft"
-            src={clinicVideoUrl}
-            controls
-            muted
-            loop
-            playsInline
-          />
+          <div className="mt-8 grid auto-rows-[9rem] grid-cols-2 gap-3 sm:auto-rows-[11rem] sm:grid-cols-4">
+            {clinicCollage.map((photo, i) => (
+              <div
+                key={photo.alt}
+                className={`overflow-hidden rounded-2xl bg-secondary shadow-soft ${
+                  i === 0 ? "col-span-2 row-span-2" : ""
+                } ${i === 4 ? "sm:col-span-2" : ""}`}
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className={`h-full w-full transition duration-500 hover:scale-105 ${photo.pos ?? "object-cover"}`}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
