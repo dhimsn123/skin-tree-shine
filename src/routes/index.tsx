@@ -532,30 +532,12 @@ function Index() {
               Take a look inside our clinic
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              A real collage of our space — reception, consultation cabins,
-              laser rooms and the technology we treat you with.
+              Reception, consultation cabins, laser rooms and the technology we
+              treat you with.
             </p>
           </div>
 
-          <div className="mt-12 grid auto-rows-[9rem] grid-cols-2 gap-3 sm:auto-rows-[11rem] sm:grid-cols-4">
-            {clinicPhotos.map((photo, i) => (
-              <div
-                key={`collage-${photo.alt}`}
-                className={`overflow-hidden rounded-2xl bg-secondary shadow-soft ${
-                  i === 0 ? "col-span-2 row-span-2" : ""
-                } ${i === 4 ? "sm:col-span-2" : ""}`}
-              >
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  loading="lazy"
-                  className={`h-full w-full transition duration-500 hover:scale-105 ${photo.pos ?? "object-cover"}`}
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {clinicReels.map((src, i) => (
               <video
                 key={src}
