@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { FloatingContact } from "../components/FloatingContact";
+import { ClinicChatBot } from "../components/ClinicChatBot";
 
 function NotFoundComponent() {
   return (
@@ -81,14 +83,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Skin Tree Aesthetics is a women-owned skin, hair and laser clinic in Kharar. Rated 4.9 from 116+ reviews. Book expert dermatology, hair transplant and laser treatments.",
+          "Skin Tree Aesthetics is a skin, hair and laser clinic in Kharar and Morinda. Rated 4.9 from 116+ reviews. Book expert dermatology, hair transplant and laser treatments.",
       },
       { name: "author", content: "Skin Tree Aesthetics" },
       { property: "og:title", content: "Skin Tree Aesthetics | Skin, Hair & Laser Clinic" },
       {
         property: "og:description",
         content:
-          "Expert skin, hair and laser treatments in Kharar. 4.9 rating · 116+ reviews · Women-owned clinic.",
+          "Expert skin, hair and laser treatments in Kharar & Morinda. 4.9 rating · 116+ reviews.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -131,6 +133,8 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <FloatingContact />
+      <ClinicChatBot />
     </QueryClientProvider>
   );
 }

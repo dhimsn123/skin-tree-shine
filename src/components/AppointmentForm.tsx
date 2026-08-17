@@ -3,18 +3,6 @@ import { useState } from "react";
 const CLINIC_EMAIL = "skintreeaesthetics21@gmail.com";
 const WHATSAPP_LINK = "https://wa.me/918768643660";
 
-const treatmentOptions = [
-  "Skin consultation",
-  "Acne / acne marks",
-  "Pigmentation & glow",
-  "Chemical peel / medi-facial",
-  "Hair fall / GFC / PRP",
-  "Hair transplant consultation",
-  "Laser hair reduction",
-  "Laser tattoo removal",
-  "Other",
-];
-
 const locationOptions = ["Kharar — Sunny Enclave", "Mohali — Sector 70"];
 
 export function AppointmentForm() {
@@ -22,7 +10,6 @@ export function AppointmentForm() {
     name: "",
     phone: "",
     email: "",
-    treatment: treatmentOptions[0],
     location: locationOptions[0],
     date: "",
     message: "",
@@ -38,7 +25,6 @@ export function AppointmentForm() {
       `Name: ${form.name.trim()}`,
       `Phone: ${form.phone.trim()}`,
       form.email.trim() ? `Email: ${form.email.trim()}` : "",
-      `Treatment: ${form.treatment}`,
       `Preferred clinic: ${form.location}`,
       form.date ? `Preferred date: ${form.date}` : "",
       form.message.trim() ? `Message: ${form.message.trim()}` : "",
@@ -61,7 +47,7 @@ export function AppointmentForm() {
     const err = validate();
     setError(err);
     if (err) return;
-    const subject = `Appointment request — ${form.name.trim()} (${form.treatment})`;
+    const subject = `Appointment request — ${form.name.trim()}`;
     window.location.href = `mailto:${CLINIC_EMAIL}?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(summary())}`;
@@ -142,21 +128,6 @@ export function AppointmentForm() {
             value={form.date}
             onChange={(e) => update("date", e.target.value)}
           />
-        </div>
-        <div>
-          <label htmlFor="ap-treatment" className="text-sm font-medium text-foreground">
-            Treatment
-          </label>
-          <select
-            id="ap-treatment"
-            className={`mt-2 ${inputClass}`}
-            value={form.treatment}
-            onChange={(e) => update("treatment", e.target.value)}
-          >
-            {treatmentOptions.map((t) => (
-              <option key={t}>{t}</option>
-            ))}
-          </select>
         </div>
         <div>
           <label htmlFor="ap-location" className="text-sm font-medium text-foreground">
