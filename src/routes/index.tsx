@@ -30,8 +30,8 @@ import photoMachines1 from "../assets/real-PHOTO-2025-04-14-17-10-53_1.jpg.asset
 import photoTeam from "../assets/real-PHOTO-2025-04-14-17-10-56_1.jpg.asset.json";
 import photoHairProcedure from "../assets/real-PHOTO-2025-04-14-17-10-56.jpg.asset.json";
 import photoDoctors from "../assets/doctors-duo.jpg.asset.json";
-import doctorFemale from "../assets/doctor-aakriti.jpg.asset.json";
-import doctorMale from "../assets/doctor-navsimran.png.asset.json";
+import doctorFemale from "../assets/doctor-aakriti-2.jpg.asset.json";
+import doctorMale from "../assets/doctor-navsimran-2.png.asset.json";
 import branchMorinda from "../assets/branch-morinda.jpg.asset.json";
 
 const clinicReels: string[] = [reel1.url, reel2.url, reel3.url];
