@@ -30,7 +30,9 @@ import photoMachines1 from "../assets/real-PHOTO-2025-04-14-17-10-53_1.jpg.asset
 import photoTeam from "../assets/real-PHOTO-2025-04-14-17-10-56_1.jpg.asset.json";
 import photoHairProcedure from "../assets/real-PHOTO-2025-04-14-17-10-56.jpg.asset.json";
 import photoDoctors from "../assets/doctors-duo.jpg.asset.json";
-import clinicTour from "../assets/clinic-photo-tour.mp4.asset.json";
+import doctorFemale from "../assets/doctor-aakriti.jpg.asset.json";
+import doctorMale from "../assets/doctor-navsimran.png.asset.json";
+import branchMorinda from "../assets/branch-morinda.jpg.asset.json";
 
 const clinicReels: string[] = [reel1.url, reel2.url, reel3.url];
 const clinicPhotos: { src: string; alt: string; pos?: string }[] = [
@@ -48,7 +50,6 @@ const clinicPhotos: { src: string; alt: string; pos?: string }[] = [
 import { treatments } from "../data/treatments";
 import { BeforeAfterGallery } from "../components/BeforeAfterGallery";
 import { AppointmentForm } from "../components/AppointmentForm";
-import { ClinicChatBot } from "../components/ClinicChatBot";
 
 
 
@@ -111,7 +112,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Book expert skin, hair and laser treatments at Skin Tree Aesthetics in Kharar. Women-owned clinic with 4.9 star rating and 116+ reviews.",
+          "Book expert skin, hair and laser treatments at Skin Tree Aesthetics in Kharar & Morinda. 4.9 star rating with 116+ reviews.",
       },
       {
         property: "og:title",
@@ -149,6 +150,7 @@ type Branch = {
   hours: string;
   mapLink: string;
   mapEmbedUrl: string;
+  photo?: string;
 };
 
 const branches: Branch[] = [
@@ -156,25 +158,26 @@ const branches: Branch[] = [
     name: "Kharar — Sunny Enclave",
     tag: "Sector 125, Kharar",
     address,
-    phoneNumber,
-    phoneLink,
-    whatsappLink,
-    hours: "Open · Closes 7 pm · Appointment recommended",
+    phoneNumber: "78010 00058",
+    phoneLink: "tel:+917801000058",
+    whatsappLink: "https://wa.me/917801000058",
+    hours: "Mon–Sat 10 am – 7 pm · Sunday 10 am – 2 pm",
     mapLink,
     mapEmbedUrl,
   },
   {
-    name: "Mohali — Sector 70",
-    tag: "Sector 70, Mohali",
-    address: "Sector 70, Mohali, Punjab",
+    name: "Morinda",
+    tag: "Morinda, Punjab",
+    address: "Skin Tree Aesthetics, Morinda, Punjab",
     phoneNumber,
     phoneLink,
     whatsappLink,
-    hours: "Open · Closes 7 pm · Appointment recommended",
+    hours: "Mon–Sat 10 am – 7 pm · Sunday 10 am – 2 pm",
+    photo: branchMorinda.url,
     mapLink:
-      "https://www.google.com/maps/search/?api=1&query=Skin+Tree+Aesthetics+Mohali",
+      "https://www.google.com/maps/search/?api=1&query=Skin+Tree+Aesthetics+Morinda",
     mapEmbedUrl:
-      "https://maps.google.com/maps?q=Skin+Tree+Aesthetics+Mohali&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      "https://maps.google.com/maps?q=Skin+Tree+Aesthetics+Morinda&t=&z=15&ie=UTF8&iwloc=&output=embed",
   },
 ];
 
@@ -350,26 +353,6 @@ function Index() {
         )}
       </header>
 
-      {/* Floating contact buttons — right side */}
-      <aside className="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-3 sm:right-5">
-        <a
-          href={whatsappLink}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Chat on WhatsApp"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-lg transition hover:scale-110 hover:bg-whatsapp-dark sm:h-14 sm:w-14"
-        >
-          <WhatsAppIcon className="h-6 w-6 sm:h-7 sm:w-7" />
-        </a>
-        <a
-          href={phoneLink}
-          aria-label="Call now"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition hover:scale-110 hover:bg-primary-dark sm:h-14 sm:w-14"
-        >
-          <CallIcon className="h-6 w-6 sm:h-7 sm:w-7" />
-        </a>
-      </aside>
-
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 opacity-40">
@@ -389,9 +372,10 @@ function Index() {
                 <span className="text-primary">Skin Tree Aesthetics</span>
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                A women-owned skin, hair and laser clinic in Kharar. Personalized
+                Where science meets aesthetics — and every treatment is designed
+                to enhance, not alter, your natural beauty. Personalized
                 dermatology care, advanced hair restoration and hygienic laser
-                treatments — all under one roof.
+                treatments in Kharar and Morinda.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
@@ -539,31 +523,36 @@ function Index() {
       </section>
 
       <section id="videos" className="bg-cream/50 py-20 sm:py-28">
-
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-primary">
               Inside the clinic
             </p>
             <h2 className="mt-3 font-heading text-3xl text-foreground sm:text-4xl">
-              Real moments from Skin Tree Aesthetics
+              Take a look inside our clinic
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              A quick look at our treatments, care and clinic space.
+              A real collage of our space — reception, consultation cabins,
+              laser rooms and the technology we treat you with.
             </p>
           </div>
 
-          <div className="mt-12 overflow-hidden rounded-3xl bg-black shadow-soft">
-            <video
-              src={clinicTour.url}
-              controls
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              className="aspect-video w-full object-cover"
-              aria-label="Clinic walkthrough video of Skin Tree Aesthetics reception"
-            />
+          <div className="mt-12 grid auto-rows-[9rem] grid-cols-2 gap-3 sm:auto-rows-[11rem] sm:grid-cols-4">
+            {clinicPhotos.map((photo, i) => (
+              <div
+                key={`collage-${photo.alt}`}
+                className={`overflow-hidden rounded-2xl bg-secondary shadow-soft ${
+                  i === 0 ? "col-span-2 row-span-2" : ""
+                } ${i === 4 ? "sm:col-span-2" : ""}`}
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className={`h-full w-full transition duration-500 hover:scale-105 ${photo.pos ?? "object-cover"}`}
+                />
+              </div>
+            ))}
           </div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -625,42 +614,130 @@ function Index() {
 
       <section id="about" className="py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-                Why choose us
-              </p>
-              <h2 className="mt-3 font-heading text-3xl text-foreground sm:text-4xl">
-                A clinic built around your comfort & confidence
-              </h2>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                Skin Tree Aesthetics is a women-owned clinic in Kharar committed to
-                safe, effective and personalized aesthetic care. Every treatment plan
-                is explained clearly, performed hygienically, and designed around
-                your goals.
-              </p>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+              About us
+            </p>
+            <h2 className="mt-3 font-heading text-3xl text-foreground sm:text-4xl">
+              Great skin isn&rsquo;t a quick fix — it&rsquo;s the right care
+            </h2>
+            <p className="mt-5 font-heading text-xl italic text-primary">
+              &ldquo;Science-backed care. Honest advice. Naturally beautiful results.&rdquo;
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:items-start">
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-heading text-2xl text-foreground">Our Journey</h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  What started as a shared vision between two doctors has grown
+                  into a trusted name in aesthetic care. Founded by Dr. Navsimran
+                  Singh and Dr. Aakriti Raj, SkinTree Aesthetics began its journey
+                  in Morinda over a decade ago, with a simple belief — great skin
+                  is not about quick fixes, but the right care and honest guidance.
+                </p>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  With the trust of our patients, we expanded to Kharar, carrying
+                  forward the same philosophy of personalized treatments, natural
+                  results and uncompromised safety. Today, SkinTree Aesthetics
+                  stands as a space where science meets aesthetics, and every
+                  treatment is designed to enhance — not alter — your natural beauty.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-heading text-2xl text-foreground">Our Commitment</h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  We are committed to delivering treatments that are as safe as they
+                  are effective. Every patient is approached with honesty, precision
+                  and a deep understanding of individual skin needs — ensuring
+                  results that are not just visible, but lasting. We believe in
+                  under-promising and over-delivering, because your trust matters
+                  more than trends.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-heading text-2xl text-foreground">Our Promise</h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  To be more than just a clinic — to be a place you can trust with
+                  your skin. A place where you feel heard, cared for and confident
+                  in every step of your journey. As we continue to grow, our promise
+                  remains the same — consistent results, ethical practices and a
+                  patient experience that feels personal, every single time.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-border bg-card p-6">
+                <h3 className="font-heading text-xl text-foreground">
+                  What makes a visit here different
+                </h3>
+                <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-muted-foreground">
+                  <li>• A detailed skin & scalp assessment before any treatment is suggested.</li>
+                  <li>• Only medically approved, dermatologist-supervised protocols.</li>
+                  <li>• Transparent pricing and realistic timelines — no pressure packages.</li>
+                  <li>• Single-use consumables and strict sterilisation for every procedure.</li>
+                  <li>• Follow-ups and home-care guidance included with your plan.</li>
+                  <li>• More than a decade of combined experience across two clinics.</li>
+                </ul>
+              </div>
+
               <a
                 href={phoneLink}
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-soft transition hover:bg-primary-dark"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-soft transition hover:bg-primary-dark"
               >
                 <Phone className="h-5 w-5" />
-                Call {phoneNumber}
+                Talk to our doctors
               </a>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2">
-              {highlights.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-2xl border border-border bg-card p-6 transition hover:border-primary/30"
-                >
-                  <item.icon className="h-6 w-6 text-primary" />
-                  <h3 className="mt-4 font-heading text-lg text-foreground">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+            <div className="space-y-8">
+              <div className="grid gap-6 sm:grid-cols-2">
+                {[
+                  {
+                    src: doctorMale.url,
+                    name: "Dr. Navsimran Singh",
+                    role: "Co-founder · Hair transplant & laser",
+                  },
+                  {
+                    src: doctorFemale.url,
+                    name: "Dr. Aakriti Raj",
+                    role: "Co-founder · Dermatology & aesthetics",
+                  },
+                ].map((doc) => (
+                  <figure
+                    key={doc.name}
+                    className="overflow-hidden rounded-3xl bg-card shadow-soft"
+                  >
+                    <img
+                      src={doc.src}
+                      alt={doc.name}
+                      loading="lazy"
+                      className="h-80 w-full object-cover object-top"
+                    />
+                    <figcaption className="p-5">
+                      <p className="font-heading text-xl text-foreground">{doc.name}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">{doc.role}</p>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                {highlights.map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-2xl border border-border bg-card p-6 transition hover:border-primary/30"
+                  >
+                    <item.icon className="h-6 w-6 text-primary" />
+                    <h3 className="mt-4 font-heading text-lg text-foreground">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -749,6 +826,14 @@ function Index() {
                 key={branch.name}
                 className="flex flex-col overflow-hidden rounded-3xl bg-card shadow-soft"
               >
+                {branch.photo && (
+                  <img
+                    src={branch.photo}
+                    alt={`${branch.name} clinic`}
+                    loading="lazy"
+                    className="h-56 w-full object-cover"
+                  />
+                )}
                 <div className="relative aspect-video w-full">
                   <iframe
                     title={`${branch.name} location map`}
@@ -846,13 +931,12 @@ function Index() {
               <br />
               skintreeaesthetics21@gmail.com · 87686 43660
               <br />
-              Women-owned · LGBTQ+ friendly · Kharar, Punjab
+              Kharar · Morinda, Punjab
             </p>
           </div>
         </div>
       </footer>
 
-      <ClinicChatBot />
     </div>
   );
 }
