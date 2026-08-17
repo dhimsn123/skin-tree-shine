@@ -1,7 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Phone } from "lucide-react";
 
-import { treatments, clinicVideoUrl, type TreatmentCategory } from "../data/treatments";
+import { treatments, type TreatmentCategory } from "../data/treatments";
+import photoEntrance from "../assets/real-IMG_0001.jpg.asset.json";
+import photoLaserRoom from "../assets/real-IMG_9983.jpg.asset.json";
+import photoLobby from "../assets/real-IMG_9989.jpg.asset.json";
+import photoDoctorCabin from "../assets/real-IMG_9990.jpg.asset.json";
+import photoReception from "../assets/real-IMG_9999.jpg.asset.json";
+import photoMachines1 from "../assets/real-PHOTO-2025-04-14-17-10-53_1.jpg.asset.json";
+import photoTeam from "../assets/real-PHOTO-2025-04-14-17-10-56_1.jpg.asset.json";
+import photoHairProcedure from "../assets/real-PHOTO-2025-04-14-17-10-56.jpg.asset.json";
+
+const clinicCollage: { src: string; alt: string; pos?: string }[] = [
+  { src: photoEntrance.url, alt: "Skin Tree Aesthetics clinic entrance in Sunny Enclave, Kharar" },
+  { src: photoReception.url, alt: "Skin Tree Aesthetics reception with gold logo wall" },
+  { src: photoLobby.url, alt: "Clinic waiting area and reception corridor" },
+  { src: photoDoctorCabin.url, alt: "Doctor's consultation cabin with certifications" },
+  { src: photoLaserRoom.url, alt: "Laser and treatment room with FDA approved diode laser" },
+  { src: photoMachines1.url, alt: "Advanced skin and laser machines at the clinic" },
+  { src: photoHairProcedure.url, alt: "GFC hair treatment procedure", pos: "object-cover object-top" },
+  { src: photoTeam.url, alt: "Skin Tree Aesthetics medical team", pos: "object-contain bg-secondary" },
+];
 
 export const Route = createFileRoute("/treatments/")({
   component: TreatmentsIndex,
